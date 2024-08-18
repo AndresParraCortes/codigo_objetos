@@ -1,0 +1,44 @@
+class Producto:
+    def __init__(self, nombre, precio, stock):
+        self.nombre = nombre
+        self.precio = precio
+        self.stock = stock
+
+    def comprar(self, cantidad):
+        if cantidad <= self.stock:
+            self.stock -= cantidad
+            return f"Has comprado {cantidad} de {self.nombre}. Quedan {self.stock} en stock."
+        else:
+            return f"No hay suficiente stock de {self.nombre}."
+
+    def mostrar_info(self):
+        return f"Producto: {self.nombre}, Precio: ${self.precio}, Stock: {self.stock}"
+
+class Electronica(Producto):
+    def __init__(self, nombre, precio, stock, garantia):
+        super().__init__(nombre, precio, stock)
+        self.garantia = garantia
+
+    def mostrar_info(self):
+        return f"Producto: {self.nombre}, Precio: ${self.precio}, Stock: {self.stock}, Garantía: {self.garantia} años"
+
+class Alimento(Producto):
+    def __init__(self, nombre, precio, stock, fecha_caducidad):
+        super().__init__(nombre, precio, stock)
+        self.fecha_caducidad = fecha_caducidad
+
+    def mostrar_info(self):
+        return f"Producto: {self.nombre}, Precio: ${self.precio}, Stock: {self.stock}, Fecha de Caducidad: {self.fecha_caducidad}"
+
+def probar_producto(producto, cantidad):
+    print(producto.mostrar_info())
+    print(producto.comprar(cantidad))
+
+televisor = Electronica("Televisor 4K", 1200, 10, 2)
+manzana = Alimento("Manzana", 0.5, 100, "2024-12-31")
+
+probar_producto(televisor, 3)
+probar_producto(manzana, 50)
+
+print(televisor.mostrar_info())
+print(manzana.mostrar_info())
