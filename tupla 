@@ -1,0 +1,386 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMLlK2JLKnl4Cxcv+95S4yV",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AndresParraCortes/codigo_objetos/blob/main/tupla%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Crea una tupla con los siguientes elementos: \"apple\", \"banana\", \"cherry\", \"date\", \"fig\", \"grape\". Imprime la tupla y el número de elementos que contiene"
+      ],
+      "metadata": {
+        "id": "vQ99jhDot33V"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "frutas = (\"apple\", \"banana\", \"cherry\", \"date\", \"fig\", \"grape\")\n",
+        "print(frutas)\n",
+        "print(len(frutas))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vFzfX8TUt6tJ",
+        "outputId": "ad020b09-97c7-411c-8c61-537e210da10c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "('apple', 'banana', 'cherry', 'date', 'fig', 'grape')\n",
+            "6\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Dada la tupla fruits = (\"apple\", \"banana\", \"cherry\", \"date\", \"fig\", \"grape\"), accede e imprime el tercer elemento de la tupla.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "RqCKXoeiuGzk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "fruits = (\"apple\", \"banana\", \"cherry\", \"date\", \"fig\", \"grape\")\n",
+        "print(fruits[2])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8vTTnquOuR09",
+        "outputId": "58ec13ac-3b59-4322-e413-b38a46495af2"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "cherry\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Dada la tupla colors = (\"red\", \"green\", \"blue\"), desempaqueta sus valores en tres variables y luego imprime cada variable."
+      ],
+      "metadata": {
+        "id": "WIGDTjvVuiam"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "colors = (\"red\", \"green\", \"blue\")\n",
+        "color1, color2, color3 = colors\n",
+        "print(color1)\n",
+        "print(color2)\n",
+        "print(color3)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MRVm2xPDulK5",
+        "outputId": "3ed04ee9-79a7-42d2-aec2-3e2f216c3f0a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "red\n",
+            "green\n",
+            "blue\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. Crea dos tuplas, una con los números (1, 2, 3) y otra con los números (4, 5, 6). Concatenálas en una sola tupla y muestra el resultado"
+      ],
+      "metadata": {
+        "id": "3mS4Y5fVvQlb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tupla1 = (1, 2, 3)\n",
+        "tupla2 = (4, 5, 6)\n",
+        "tupla_concatenada = tupla1 + tupla2\n",
+        "print(tupla_concatenada)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ba9Mk_Ievf68",
+        "outputId": "0fa83ab4-f20a-4556-dfed-3fb57f3f7650"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(1, 2, 3, 4, 5, 6)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. Crea una tupla con el elemento \"repeat\" y repítela 4 veces. Imprime el resultado."
+      ],
+      "metadata": {
+        "id": "uJDPLDXuvsOU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tupla = (\"repeat\",)\n",
+        "tupla_repetida = tupla * 4\n",
+        "print(tupla_repetida)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6B9cactAvxEJ",
+        "outputId": "2c2e5408-8fff-478c-f5c7-ecf31204c2d3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "('repeat', 'repeat', 'repeat', 'repeat')\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. Dada la tupla numbers = (10, 20, 30, 40, 50), utiliza un bucle for para iterar sobre la tupla e imprimir cada número."
+      ],
+      "metadata": {
+        "id": "zksK2cwkwLlO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numbers = (10, 20, 30, 40, 50)\n",
+        "for number in numbers:\n",
+        "    print(number)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PmPz8SapwShC",
+        "outputId": "aa0bb00f-f534-4c57-e387-63dcf3639d79"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "20\n",
+            "30\n",
+            "40\n",
+            "50\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. Crea una tupla que contenga otras dos tuplas: tuple1 = (1, 2, 3) y tuple2 = (\"a\", \"b\", \"c\"). Imprime la tupla anidada."
+      ],
+      "metadata": {
+        "id": "5BB5q8UFwa6S"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tuple1 = (1, 2, 3)\n",
+        "tuple2 = (\"a\", \"b\", \"c\")\n",
+        "nested_tuple = (tuple1, tuple2)\n",
+        "print(nested_tuple)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HFz1Xkpewd-N",
+        "outputId": "5af2e5c3-57d4-423e-d066-97bf8317de98"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "((1, 2, 3), ('a', 'b', 'c'))\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. Dada la tupla letters = (\"a\", \"b\", \"c\", \"d\"), verifica si la letra \"e\" está en la tupla e imprime un mensaje apropiado.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "sz1BLOEZwpSi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "letters = (\"a\", \"b\", \"c\", \"d\")\n",
+        "if \"e\" in letters:\n",
+        "    print(\"La letra 'e' está en la tupla.\")\n",
+        "else:\n",
+        "    print(\"La letra 'e' no está en la tupla.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dRbe0otBwwFt",
+        "outputId": "45e33622-7e89-4c5f-a9d4-fc8e711366be"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "La letra 'e' no está en la tupla.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. Convierte la lista my_list = [100, 200, 300, 400] a una tupla e imprime la tupla resultante."
+      ],
+      "metadata": {
+        "id": "66thUBmDxHf5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_list = [100, 200, 300, 400]\n",
+        "my_tuple = tuple(my_list)\n",
+        "print(my_tuple)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xlDHEjLexN29",
+        "outputId": "ca5cdb9c-2177-4c34-f389-2e300c824068"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(100, 200, 300, 400)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10. Dada la tupla my_tuple = (5, 10, 15, 20, 25, 30, 35), imprime el valor en el índice 2 y una sub-tupla que contenga los elementos desde el índice 1 hasta el 4."
+      ],
+      "metadata": {
+        "id": "c-7XjVjJxSmB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_tuple = (5, 10, 15, 20, 25, 30, 35)\n",
+        "print(\"Valor en el índice 2:\", my_tuple[2])\n",
+        "sub_tuple = my_tuple[1:5]\n",
+        "print(\"Sub-tupla desde el índice 1 hasta el 4:\", sub_tuple)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uZPh_RiUxUH1",
+        "outputId": "a5c04e27-369f-47d1-e3e8-6775ff87c5b4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Valor en el índice 2: 15\n",
+            "Sub-tupla desde el índice 1 hasta el 4: (10, 15, 20, 25)\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
