@@ -1,0 +1,271 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNbCeboJjW9vxhDiQcSPP/6",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AndresParraCortes/codigo_objetos/blob/main/actividad\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. dada una lista de números [100,30,20], conviértela a una tupla y luego regresa la tupla a una lista. Imprimir la lista final"
+      ],
+      "metadata": {
+        "id": "Dl28f84Ck2Qj"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numeros = [100, 30, 20]\n",
+        "\n",
+        "tupla_numeros = tuple(numeros)\n",
+        "\n",
+        "lista_final = list(tupla_numeros)\n",
+        "\n",
+        "print(lista_final)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Z9W-VXRck4xF",
+        "outputId": "6ad37d1b-c653-414d-96e6-8e97914f486f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[100, 30, 20]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Dada una tupla de camisas , debe crear un diccionario de precios por cada camisa. Luego almacene las camisas y precios y condicione si la lista de precios es mayor a 100"
+      ],
+      "metadata": {
+        "id": "AHt93tQclJT5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "camisas = (\"Camisa1\", \"Camisa2\", \"Camisa3\")\n",
+        "\n",
+        "precios = {\n",
+        "    \"Camisa1\": 120,\n",
+        "    \"Camisa2\": 80,\n",
+        "    \"Camisa3\": 150\n",
+        "}\n",
+        "\n",
+        "camisas_mayor_100 = {camisa: precio for camisa, precio in precios.items() if precio > 100}\n",
+        "\n",
+        "print(\"Todas las camisas y sus precios:\", precios)\n",
+        "print(\"Camisas con precios mayores a 100:\", camisas_mayor_100)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "a1jpCUGvlOS9",
+        "outputId": "30d4564a-2281-4220-d04d-123664b2248c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Todas las camisas y sus precios: {'Camisa1': 120, 'Camisa2': 80, 'Camisa3': 150}\n",
+            "Camisas con precios mayores a 100: {'Camisa1': 120, 'Camisa3': 150}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Dada una lista de plalabras [\"manzana\", \"banana\", \"manzana\", \"pera\" , \"banana\"], cuenta cuántas veces aparece cada palabra y almacena los resultados."
+      ],
+      "metadata": {
+        "id": "B5lmxYgYlTW9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "palabras = [\"manzana\", \"banana\", \"manzana\", \"pera\", \"banana\"]\n",
+        "\n",
+        "conteo_palabras = {}\n",
+        "\n",
+        "for palabra in palabras:\n",
+        "    if palabra in conteo_palabras:\n",
+        "        conteo_palabras[palabra] += 1\n",
+        "    else:\n",
+        "        conteo_palabras[palabra] = 1\n",
+        "\n",
+        "print(conteo_palabras)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Kr1u6z7ClatO",
+        "outputId": "b169202d-58f7-4a7a-b8a1-fdf6b0da42c4"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'manzana': 2, 'banana': 2, 'pera': 1}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. Crear un programa que permita al usuario almacenar datos enteros en una matriz y esos datos se sumen y luego realice su respectivo promedio."
+      ],
+      "metadata": {
+        "id": "j8KwqcKjl5-Z"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def crear_matriz(filas, columnas):\n",
+        "    matriz = []\n",
+        "    for i in range(filas):\n",
+        "        fila = []\n",
+        "        for j in range(columnas):\n",
+        "            valor = int(input(f\"Ingrese un número entero para la posición [{i+1}, {j+1}]: \"))\n",
+        "            fila.append(valor)\n",
+        "        matriz.append(fila)\n",
+        "    return matriz\n",
+        "\n",
+        "def sumar_matriz(matriz):\n",
+        "    suma = 0\n",
+        "    for fila in matriz:\n",
+        "        suma += sum(fila)\n",
+        "    return suma\n",
+        "\n",
+        "def promedio_matriz(matriz, total_elementos):\n",
+        "    suma = sumar_matriz(matriz)\n",
+        "    promedio = suma / total_elementos\n",
+        "    return promedio\n",
+        "\n",
+        "filas = int(input(\"Ingrese el número de filas de la matriz: \"))\n",
+        "columnas = int(input(\"Ingrese el número de columnas de la matriz: \"))\n",
+        "\n",
+        "matriz = crear_matriz(filas, columnas)\n",
+        "suma = sumar_matriz(matriz)\n",
+        "\n",
+        "total_elementos = filas * columnas\n",
+        "promedio = promedio_matriz(matriz, total_elementos)\n",
+        "\n",
+        "2\n",
+        "print(f\"\\nMatriz ingresada: {matriz}\")\n",
+        "print(f\"Suma de los elementos: {suma}\")\n",
+        "print(f\"Promedio de los elementos: {promedio}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7Kjhugn2mK-O",
+        "outputId": "cb26cc6b-182a-4247-d387-0f936d63ccbb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese el número de filas de la matriz: 2\n",
+            "Ingrese el número de columnas de la matriz: 3\n",
+            "Ingrese un número entero para la posición [1, 1]: 4\n",
+            "Ingrese un número entero para la posición [1, 2]: 5\n",
+            "Ingrese un número entero para la posición [1, 3]: 2\n",
+            "Ingrese un número entero para la posición [2, 1]: 5\n",
+            "Ingrese un número entero para la posición [2, 2]: 3\n",
+            "Ingrese un número entero para la posición [2, 3]: 6\n",
+            "\n",
+            "Matriz ingresada: [[4, 5, 2], [5, 3, 6]]\n",
+            "Suma de los elementos: 25\n",
+            "Promedio de los elementos: 4.166666666666667\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. Dada una lista de diccionarios que representan productos con su nombre y precio, calcula la suma total de los precios de todos los productos ."
+      ],
+      "metadata": {
+        "id": "nSdcaXeZmWx8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "productos = [\n",
+        "    {\"nombre\": \"Producto1\", \"precio\": 50},\n",
+        "    {\"nombre\": \"Producto2\", \"precio\": 75},\n",
+        "    {\"nombre\": \"Producto3\", \"precio\": 30},\n",
+        "    {\"nombre\": \"Producto4\", \"precio\": 120}\n",
+        "]\n",
+        "\n",
+        "suma_total = sum(producto[\"precio\"] for producto in productos)\n",
+        "\n",
+        "print(f\"La suma total de los precios de todos los productos es: {suma_total}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jnqEZ-gnmY5g",
+        "outputId": "da0b5af1-0a15-4f76-f8ca-972d7bc0f012"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "La suma total de los precios de todos los productos es: 275\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
