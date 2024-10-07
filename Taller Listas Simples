@@ -1,0 +1,276 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AndresParraCortes/codigo_objetos/blob/main/Taller%20Listas%20Simples\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Crear una lista de nodos de ropa: camisa, zapatos, pantalones, etc"
+      ],
+      "metadata": {
+        "id": "V9lONOys9Par"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "class Nodo:\n",
+        "    def __init__(self, prenda, cantidad):\n",
+        "        self.prenda= prenda\n",
+        "        self.cantidad= cantidad\n",
+        "\n",
+        "        self.siguiente = None\n",
+        "\n",
+        "\n",
+        "class ListaSimple:\n",
+        "    def __init__(self):\n",
+        "        self.cabeza = None\n",
+        "\n",
+        "\n",
+        "    def insertar(self, prenda, cantidad):\n",
+        "        nuevo_nodo = Nodo(prenda,cantidad)\n",
+        "        if not self.cabeza:\n",
+        "            self.cabeza = nuevo_nodo\n",
+        "        else:\n",
+        "            actual = self.cabeza\n",
+        "            while actual.siguiente:\n",
+        "                actual = actual.siguiente\n",
+        "            actual.siguiente = nuevo_nodo\n",
+        "\n",
+        "    def mostrar(self):\n",
+        "        if not self.cabeza:\n",
+        "            print(\"La lista está vacía.\")\n",
+        "            return\n",
+        "        actual = self.cabeza\n",
+        "        while actual:\n",
+        "            print(f\"Prenda:{actual.prenda}, Cantidad: {actual.cantidad}\")\n",
+        "            actual = actual.siguiente\n",
+        "        print(\"fin\")\n",
+        "\n",
+        "ropa = ListaSimple()\n",
+        "\n",
+        "datos_ingresar= int(input(\"¿Cuantas prendas desea ingresar por nodo: \"))\n",
+        "for i in range (datos_ingresar):\n",
+        "  ropa.insertar(input(f\"ingresar nombre: {i}\"), input(f\"ingrese cantidad: {i}\"))\n",
+        "\n",
+        "ropa.mostrar()"
+      ],
+      "metadata": {
+        "id": "7xWwkt-w9qA8",
+        "outputId": "4a1380d1-53c7-44df-8d57-0270747b0902",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "¿Cuantas prendas desea ingresar por nodo: 3\n",
+            "ingresar nombre: 0camisa\n",
+            "ingrese cantidad: 03\n",
+            "ingresar nombre: 1pantalon\n",
+            "ingrese cantidad: 11\n",
+            "ingresar nombre: 2zapatos\n",
+            "ingrese cantidad: 22\n",
+            "Prenda:camisa, Cantidad: 3\n",
+            "Prenda:pantalon, Cantidad: 1\n",
+            "Prenda:zapatos, Cantidad: 2\n",
+            "None\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Crear una lista de datos del inventario del aula de clase, osea, escritorios, computadores, mouse, teclados, sillas, salon, tablero , tv.\n"
+      ],
+      "metadata": {
+        "id": "ZTzmzOz4BTXJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Nodo:\n",
+        "    def __init__(self, articulo, cantidad):\n",
+        "        self.articulo = articulo\n",
+        "        self.cantidad = cantidad\n",
+        "        self.siguiente = None\n",
+        "\n",
+        "class ListaSimple:\n",
+        "    def __init__(self):\n",
+        "        self.cabeza = None\n",
+        "\n",
+        "    def insertar(self, articulo, cantidad):\n",
+        "        nuevo_nodo = Nodo(articulo,cantidad)\n",
+        "        if not self.cabeza:\n",
+        "            self.cabeza = nuevo_nodo\n",
+        "        else:\n",
+        "            actual = self.cabeza\n",
+        "            while actual.siguiente:\n",
+        "                actual = actual.siguiente\n",
+        "            actual.siguiente = nuevo_nodo\n",
+        "\n",
+        "    def mostrar(self):\n",
+        "        if not self.cabeza:\n",
+        "            print(\"La lista está vacía.\")\n",
+        "            return\n",
+        "        actual = self.cabeza\n",
+        "        while actual:\n",
+        "            print(f\"Articulo:{actual.articulo}, Cantidad: {actual.cantidad}\")\n",
+        "            actual = actual.siguiente\n",
+        "        print(\"fin\")\n",
+        "\n",
+        "inventario = ListaSimple()\n",
+        "\n",
+        "articulos = [\"escritorios\", \"computadores\", \"mouse\", \"teclados\", \"sillas\", \"salon\", \"tablero\", \"tv\"]\n",
+        "\n",
+        "for articulo in articulos:\n",
+        "  cantidad = int(input(f\"Ingrese la cantidad de {articulo}: \"))\n",
+        "  inventario.insertar(articulo, cantidad)\n",
+        "\n",
+        "inventario.mostrar()"
+      ],
+      "metadata": {
+        "id": "n5E5Ok2sBT7R",
+        "outputId": "dbbf3fdc-56c7-4e18-8fc0-1e6a6a803e14",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese la cantidad de escritorios: 30\n",
+            "Ingrese la cantidad de computadores: 18\n",
+            "Ingrese la cantidad de mouse: 19\n",
+            "Ingrese la cantidad de teclados: 20\n",
+            "Ingrese la cantidad de sillas: 28\n",
+            "Ingrese la cantidad de salon: 1\n",
+            "Ingrese la cantidad de tablero: 1\n",
+            "Ingrese la cantidad de tv: 1\n",
+            "Articulo:escritorios, Cantidad: 30\n",
+            "Articulo:computadores, Cantidad: 18\n",
+            "Articulo:mouse, Cantidad: 19\n",
+            "Articulo:teclados, Cantidad: 20\n",
+            "Articulo:sillas, Cantidad: 28\n",
+            "Articulo:salon, Cantidad: 1\n",
+            "Articulo:tablero, Cantidad: 1\n",
+            "Articulo:tv, Cantidad: 1\n",
+            "fin\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Crear una lista de nodos de tik tok de : famoso, nombre famoso, cantidad_tiktoksubidos\n"
+      ],
+      "metadata": {
+        "id": "uIwJVZ8iCJSJ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Nodo:\n",
+        "    def __init__(self, nombre, seguidores, tiktoks):\n",
+        "        self.nombre= nombre\n",
+        "        self.seguidores= seguidores\n",
+        "        self.tiktoks= tiktoks\n",
+        "        self.siguiente = None\n",
+        "\n",
+        "\n",
+        "class ListaSimple:\n",
+        "    def __init__(self):\n",
+        "        self.cabeza = None\n",
+        "\n",
+        "\n",
+        "    def insertar(self, nombre, seguidores, tiktoks):\n",
+        "        nuevo_nodo = Nodo(nombre, seguidores, tiktoks)\n",
+        "        if not self.cabeza:\n",
+        "            self.cabeza = nuevo_nodo\n",
+        "        else:\n",
+        "            actual = self.cabeza\n",
+        "            while actual.siguiente:\n",
+        "                actual = actual.siguiente\n",
+        "            actual.siguiente = nuevo_nodo\n",
+        "\n",
+        "    def mostrar(self):\n",
+        "        if not self.cabeza:\n",
+        "            print(\"La lista está vacía.\")\n",
+        "            return\n",
+        "        actual = self.cabeza\n",
+        "        while actual:\n",
+        "            print(f\"Nombre:{actual.nombre}, Seguidores: {actual.seguidores}, tiktoks subidos: {actual.tiktoks}\")\n",
+        "            actual = actual.siguiente\n",
+        "        print(\"fin\")\n",
+        "\n",
+        "famosos = ListaSimple()\n",
+        "\n",
+        "datos_ingresar= int(input(\"¿cuantos famosos desea ingresar: \"))\n",
+        "for i in range (datos_ingresar):\n",
+        "  famosos.insertar(input(f\"ingresar nombre: {i}\"), input(f\"ingrese cantidad de seguidores: {i}\"), input(f\"ingrese cantidad de tiktoks: {i}\"))\n",
+        "\n",
+        "famosos.mostrar()"
+      ],
+      "metadata": {
+        "id": "0IL4tvmrCKf6",
+        "outputId": "38d08551-48b9-42fc-97f6-1240e015f549",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "¿cuantos famosos desea ingresar: 2\n",
+            "ingresar nombre: 0jorge\n",
+            "ingrese cantidad de seguidores: 01656454\n",
+            "ingrese cantidad de tiktoks: 014326\n",
+            "ingresar nombre: 1julianito\n",
+            "ingrese cantidad de seguidores: 13435\n",
+            "ingrese cantidad de tiktoks: 1436536\n",
+            "Nombre:jorge, Seguidores: 1656454, tiktoks subidos: 14326\n",
+            "Nombre:julianito, Seguidores: 3435, tiktoks subidos: 436536\n",
+            "fin\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Te damos la bienvenida a Colaboratory",
+      "toc_visible": true,
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
